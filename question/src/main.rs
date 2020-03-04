@@ -5,12 +5,12 @@ fn judg(i: i32) -> Result<(), String> {
     }
 }
 
-fn temp(i: i32) -> Result<(), String> {
+fn temp(i: i32) -> Result<String, String> {
     judg(i)?;
-    println!("偶数です");
-    Ok(())
+    Ok("偶数です".to_string())
 }
 
 fn main() {
-    temp(2);
+    let r = temp(3);
+    println!("{:?}", r);
 }
